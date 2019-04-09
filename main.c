@@ -1,24 +1,27 @@
 #include <stdio.h>
+#include <regex.h>
 
 int main()
 {
-    return 0;
+	char encryptionKey[] = "ZABCDEFGHIJKLMNOPQRSTUVWXY";
+	int frequency[26] = {0};
+
+
+
 }
-
-
-
 
 void decryptRotation(char * file, char * encryptionKey)
 {
-	char * word = getNextWord();
+	char word[20];
+	int size = getNextWord(word);
+	char newWord[size+1];
+	memcpy( newWord, &word, size);
+	newWord[size] = '\0';
 	for (int i = 0; i < 26; i++)
 	{
-        
+
 	}
 }
-
-
-
 
 
 int getNextWord(char * word)
