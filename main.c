@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <regex.h>
 
+
+void decryptRotation(char * file, char * encryptionKey);
+int getNextWord(char * word);
+int readFile(char * file, char * frequency, char * filePath);
+
+
+
 int main()
 {
 	char encryptionKey[] = "ZABCDEFGHIJKLMNOPQRSTUVWXY";
