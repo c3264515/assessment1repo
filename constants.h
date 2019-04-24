@@ -1,3 +1,22 @@
+/*
+
+	Program Mode
+
+	Modes:
+	0 - Encrypt Rotation
+	1 - Decrypt Rotation with key
+	2 - Decrypt Rotation without key
+
+	3 - Encrypt Subsitution
+	4 - Decrpyt Substitution with key
+	5 - Decrpyt Substitution without key
+*/ 
+#define MODE 5
+
+
+
+
+
 // File path to dictionary
 #define DICT_FILE_PATH "dictionary.txt"
 
@@ -25,32 +44,6 @@
 // Theoretical Maximum word count
 #define MAX_FILE_LENGTH 50
 
-// Number of Four-Grams
-#define NUM_4GRAMS 389373
-
 // Number of Trigrams
 #define NUM_TRIGRAMS 17556
 
-// Total sum of all Trigram Frequencies
-/*
-
-	Program Mode
-
-	Modes:
-	0 - Encrypt Rotation
-	1 - Decrypt Rotation with key
-	2 - Decrypt Rotation without key
-
-	3 - Encrypt Subsitution
-	4 - Decrpyt Substitution with key
-	5 - Decrpyt Substitution without key
-*/ 
-#define MODE 5
-
-// Some custom syntax:
-// for loop for arrays
-// Sourced from https://stackoverflow.com/questions/400951/does-c-have-a-foreach-loop-construct
-
-/*
-
-*/
