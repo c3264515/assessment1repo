@@ -4,7 +4,16 @@
 // Pattern file
 #define PATTERN_FILE_PATH "patterns.txt"
 
-// Rotation Cipher Key
+// Input file path
+#define INPUT_FILE_PATH "input.txt"
+
+// Output file path
+#define OUTPUT_FILE_PATH "output.txt"
+
+// Trigram file path
+#define TRIGRAM_FILE_PATH "trigrams.txt"
+
+// Rotation Cipher Key (number between 0 and 25)
 #define ROTATION_KEY 1
 
 // Substitution Cipher Key
@@ -13,10 +22,20 @@
 // Theoretical Maximum word length
 #define MAX_WORD_LENGTH 50
 
+// Theoretical Maximum word count
+#define MAX_FILE_LENGTH 50
 
-// Program Mode
-#define MODE 0
+// Number of Four-Grams
+#define NUM_4GRAMS 389373
+
+// Number of Trigrams
+#define NUM_TRIGRAMS 17556
+
+// Total sum of all Trigram Frequencies
 /*
+
+	Program Mode
+
 	Modes:
 	0 - Encrypt Rotation
 	1 - Decrypt Rotation with key
@@ -26,4 +45,12 @@
 	4 - Decrpyt Substitution with key
 	5 - Decrpyt Substitution without key
 */ 
- 
+#define MODE 5
+
+// Some custom syntax:
+// for loop for arrays
+// Sourced from https://stackoverflow.com/questions/400951/does-c-have-a-foreach-loop-construct
+
+/*
+
+*/
