@@ -8,10 +8,7 @@
 
 
 
-/*
-	Takes in a string and character and returns the index position of the element
-	If the character is not in the string, it returns -1
-*/
+
 
 
 
@@ -31,11 +28,18 @@ void printLoadingBar(double percentage)
         "Deciphering - |######### |",
         "Deciphering - |##########|"
     };
-    
+
     int bar = (percentage/100) * 11;
     printf("\r%s [%.1f%%]", loadingBar[bar], percentage);
 }
 
+
+
+
+/*
+	Takes in a string and character and returns the first index position of the element
+	If the character is not in the string, it returns -1
+*/
 int getIndex(char * word, char letter)
 {
 	char c = word[0];
@@ -43,11 +47,13 @@ int getIndex(char * word, char letter)
 	if (c == '\0') return -1;
 	while (c != '\0')
 	{
+        // check if the character is found
 		if (word[i] == letter)
 			return i;
 		i++;
 		c = word[i];
-	}	
+	}
+    // returns -1 if the character is not found	
 	return -1;
 
 	
@@ -55,22 +61,10 @@ int getIndex(char * word, char letter)
 
 
 
-void getAllIndexes(char * word, char letter, int * indexes)
-{
-	char c = word[0];
-	int i = 0, j = 0;
-	while (c != '\0')
-	{
-		if (word[i] == letter)
-			indexes[j] = i;
-			j++;
-		i++;
-		c = word[i];
-	}
-	indexes[j] = -1;
-}
-
-
+/*
+    saves the maximum number of words found in the dictionary
+    if the new maximum is greater than the old maximum, returns true, otherwise returns false
+*/
 bool matchToDictionary(FILE * file)
 {
 	fseek(file, 0L, SEEK_SET);
@@ -106,7 +100,7 @@ bool matchToDictionary(FILE * file)
 	FILE * dictionary = fopen(DICT_FILE_PATH, "r");
     for(int i = 0; i < wordCount; i++)
     {
-        
+        // reset the position indicator
         fseek(dictionary, 0L, SEEK_SET);
         while (!feof(dictionary))
         {
@@ -132,6 +126,10 @@ bool matchToDictionary(FILE * file)
     
 }
 
+
+/*
+    switches 2 random elements of the array
+*/
 void shuffle(char * array)
 {
 	
@@ -142,21 +140,19 @@ void shuffle(char * array)
 	array[a] = aValue;
 }
 
-void thoroughShuffle(char * array, int length)
+/*
+    switches 2 random elements of the array, n times
+*/
+void thoroughShuffle(char * array, int n)
 {
-    // we use a predefinied seed since it seems to work the most effectively with a wide variety of inputs
+    // we use this predefinied seed since it seems to work the most effectively with a wide variety of inputs
 	srand(RNG_SEED);
-	for (int i = 0; i < length; i++)
+	for (int i = 0; i < n; i++)
 	{
-		int a = rand() % length;
-		int b = rand() % length;
+		int a = rand() % n;
+		int b = rand() % n;
 		char aValue = array[b];
 		array[b] = array[a];
 		array[a] = aValue;
 	}
 }
-
-
-
-
-
